@@ -4,17 +4,17 @@
 # # # # # # # # # # #
 name: Padavan CI PSG1218
 on:
-   schedule:                           # 时间表
-     - cron: '35 12 * * *'              # 每天国际时间19点，北京时间凌晨3点执行(北京+8)
+schedule:                 # 时间表
+  - cron: "37 12 * * *"    # 每天国际时间 19 点，北京时间 3 点执行(北京+8)
   push: # push 操作
     branches: # 分支
       - master # 主分支
     #   paths:                            # 路径
-    #     - padavan/*                     # 监听Padavan目录下所有文件的push操作
+    #     - openwrt/*                     # 监听openwrt目录下所有文件的push操作
     paths: # 路径
-      - logs/n3.md # 监听logs目录下 n3.md 的push操作
-watch:                     # 监视操作
-    types: started         # 点击 star 之后,可以写数组形式，具体可以参考官方文档
+      - logs/g-dock.md # 监听logs目录下 k2.md 的push操作
+  # watch:                              # 监视操作
+  #   types: [started]                  # 点击 star 之后
 env:
   DEVICES: "PSG1218" # 设备名字数组
   UPLOAD_FIRMWARE: true # 导出固件
